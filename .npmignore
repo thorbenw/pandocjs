@@ -1,0 +1,7 @@
+.vscode
+.github
+test
+*.tgz
+tsconfig.*
+NPM_TARBALL
+bin.bak

@@ -1,0 +1,15 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "noEmit": false,
+        "emitDeclarationOnly": true,
+    },
+    "files": [
+        "test/_suite.js"
+    ],
+    "exclude": [
+        "node_modules",
+        "doc",
+        "**/*.d.ts",
+    ]
+}

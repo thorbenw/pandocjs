@@ -1,0 +1,39 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Debug Current File",
+        "program": "${file}",
+        "args": [
+            "--vscode-debug"
+        ],
+        "skipFiles": [
+            "<node_internals>/**"
+        ],
+        "outFiles": [
+            "${workspaceFolder}/**"
+        ],
+        "console": "integratedTerminal",
+        "internalConsoleOptions": "neverOpen"
+      },
+      {
+          "type": "node",
+          "request": "launch",
+          "name": "Mocha Suite (All)",
+          "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+          "args": [
+              "--timeout",
+              "999999",
+              "--colors",
+              "${workspaceFolder}/test/_suite.js"
+          ],
+          "console": "integratedTerminal",
+          "internalConsoleOptions": "neverOpen"
+      }
+    ]
+  }

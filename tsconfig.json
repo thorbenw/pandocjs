@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "noEmit": true,
+        "declaration": true,
+        "allowJs": true,
+        "checkJs": true,
+        "emitDeclarationOnly": false,
+        "traceResolution": false,
+        "resolveJsonModule": false,
+    },
+    "compileOnSave": true,
+    "include": [
+        "**/*.js"
+    ],
+    "exclude": [
+        "node_modules",
+        "doc",
+        "**/*.d.ts",
+    ]
+}

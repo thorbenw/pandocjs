@@ -1,0 +1,59 @@
+{
+  "name": "pandocjs",
+  "version": "2.9.2-1",
+  "description": "Another wrapper for pandoc, including automatic binary download",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "node -e \"require('github-release-packager').UpdateBinary()\"",
+    "pretest": "npm run build",
+    "test": "node ./node_modules/mocha/bin/_mocha --timeout 999999 --colors ./test/_suite.js",
+    "linter": "semistandard",
+    "prermdecl": "npm run linter",
+    "rmdecl": "node -e \"require('@nbb.com/npmbuildtools/lib/declaration-files').RemoveDeclarations()\"",
+    "pretsc": "npm run rmdecl",
+    "tsc": "tsc -p tsconfig.build.json",
+    "posttsc": "tsc -p tsconfig.json",
+    "build": "node -e \"require('github-release-packager').UpdatePackage({ operation: 2})\"",
+    "postbuild": "npm run tsc",
+    "prepack": "node \"node_modules/github-release-packager/lib/renamebin\"",
+    "postpack": "node -e \"require('@nbb.com/npmbuildtools').PostPack([['node_modules/github-release-packager/lib/restorebin']], { logLevel: 'none' })\""
+  },
+  "keywords": [
+    "javascript",
+    "pandoc",
+    "markdown",
+    "docbook",
+    "asciidoc",
+    "jsdoc"
+  ],
+  "author": "Thorben Wolkersdorfer <thorbenw@nbb.com> (https://www.notebooksbilliger.de/)",
+  "license": "MIT",
+  "repository": "github:thorbenw/pandocjs",
+  "engines": {
+    "node": ">=8.17.0"
+  },
+  "directories": {
+    "lib": "./lib",
+    "test": "./test"
+  },
+  "bin": {
+    "pandoc": "./bin/2.9.2.1/pandoc-2.9.2.1/pandoc.exe"
+  },
+  "dependencies": {
+    "@nbb.com/npmbuildtools": "^2.2.13",
+    "fs-extra": "^8.1.0",
+    "github-release-packager": "^0.0.4"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^8.1.0",
+    "@types/mocha": "^7.0.2",
+    "mocha": "^7.1.1"
+  },
+  "semistandard": {
+    "env": "mocha"
+  },
+  "grp": {
+    "repository": "github:jgm/pandoc",
+    "plugin": "./lib/grp-plugin-pandoc"
+  }
+}
