@@ -36,9 +36,6 @@
     "lib": "./lib",
     "test": "./test"
   },
-  "bin": {
-    "pandoc": "./bin/2.9.2.1/pandoc-2.9.2.1/pandoc.exe"
-  },
   "dependencies": {
     "@nbb.com/npmbuildtools": "^2.2.13",
     "fs-extra": "^8.1.0",
@@ -55,6 +52,16 @@
   },
   "grp": {
     "repository": "github:jgm/pandoc",
-    "plugin": "./lib/grp-plugin-pandoc"
+    "plugin": "./lib/grp-plugin-pandoc",
+    "executables": {
+      "pandoc": {
+        "win32": {
+          "x64": "bin/2.9.2.1/pandoc-2.9.2.1/pandoc.exe"
+        },
+        "linux": {
+          "x64": "bin/2.9.2.1/pandoc-2.9.2.1/bin/pandoc"
+        }
+      }
+    }
   }
 }
