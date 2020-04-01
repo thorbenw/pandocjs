@@ -39,7 +39,7 @@
   "dependencies": {
     "@nbb.com/npmbuildtools": "^2.2.13",
     "fs-extra": "^8.1.0",
-    "github-release-packager": "^0.0.7",
+    "github-release-packager": "^0.0.8",
     "tar4": "npm:tar@^4.4.13"
   },
   "devDependencies": {
