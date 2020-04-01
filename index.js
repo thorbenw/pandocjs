@@ -26,7 +26,7 @@ function validateFormat (kind, format) {
  * @returns {string} An entire command line string.
  */
 function validateOptions (options) {
-  var result = [`"${gr.GetExecutable('pandoc')}"`];
+  var result = [`"${gr.GetExecutableSync('pandoc')}"`];
 
   Object.keys(options).forEach(optionKey => {
     if (options[optionKey] === undefined) {
