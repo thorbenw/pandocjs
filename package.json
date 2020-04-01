@@ -1,6 +1,6 @@
 {
   "name": "pandocjs",
-  "version": "2.9.2-1",
+  "version": "2.9.2-1.1",
   "description": "Another wrapper for pandoc, including automatic binary download",
   "main": "index.js",
   "scripts": {
@@ -39,7 +39,7 @@
   "dependencies": {
     "@nbb.com/npmbuildtools": "^2.2.13",
     "fs-extra": "^8.1.0",
-    "github-release-packager": "^0.0.5",
+    "github-release-packager": "^0.0.6",
     "tar4": "npm:tar@^4.4.13"
   },
   "devDependencies": {
@@ -53,6 +53,7 @@
   "grp": {
     "repository": "github:jgm/pandoc",
     "plugin": "./lib/grp-plugin-pandoc",
+    "versionSuffix": "1",
     "executables": {
       "pandoc": {
         "win32": {
