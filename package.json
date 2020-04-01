@@ -39,7 +39,7 @@
   "dependencies": {
     "@nbb.com/npmbuildtools": "^2.2.13",
     "fs-extra": "^8.1.0",
-    "github-release-packager": "^0.0.6",
+    "github-release-packager": "^0.0.7",
     "tar4": "npm:tar@^4.4.13"
   },
   "devDependencies": {
@@ -57,10 +57,13 @@
     "executables": {
       "pandoc": {
         "win32": {
-          "x64": "bin/2.9.2.1/pandoc-2.9.2.1/pandoc.exe"
+          "default": "bin/2.9.2.1/pandoc-2.9.2.1/pandoc.exe"
         },
         "linux": {
           "x64": "bin/2.9.2.1/pandoc-2.9.2.1/bin/pandoc"
+        },
+        "darwin": {
+          "default": "bin/2.9.2.1/pandoc-2.9.2.1/bin/pandoc"
         }
       }
     }
