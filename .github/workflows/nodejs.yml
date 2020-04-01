@@ -20,7 +20,11 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Prepare installation
+    - name: Install typescript
+      if: (matrix['os'] == 'macos-latest')
+      run: npm install typescript -g
+      shell: bash
+    - name: Install semistandard
       run: npm install semistandard -g
     - run: npm install
     - run: npm test
